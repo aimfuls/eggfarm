@@ -141,7 +141,7 @@ end
 
 local function ServerHop()
     local SelectedJobId = RandomJobId();
-    rconsoleprint("@@RED@@")
+    rconsoleprint("@@YELLOW@@")
     rconsoleprint("Server hopping...". \n")
     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, SelectedJobId)
     game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(Status)
