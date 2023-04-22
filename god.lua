@@ -2,7 +2,7 @@ rconsolename("GHAST OWNS YOU ; ghast#0001")
 rconsoleprint("@@CYAN@@")
 
 if not game:IsLoaded() then
-    rconsoleprint("[♡] Waiting for character to load \n")
+    rconsoleprint("Waiting for character to load \n")
     game.Loaded:Wait()
 end
 
