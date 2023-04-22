@@ -2,7 +2,7 @@ rconsolename("GHAST OWNS YOU ; ghast#0001")
 rconsoleprint("@@CYAN@@")
 
 if not game:IsLoaded() then
-    rconsoleprint("[*] Waiting for game to load. \n")
+    rconsoleprint("[Loading] \n")
     game.Loaded:Wait()
 end
 
@@ -126,15 +126,15 @@ local function MainFarm()
         Stats[2] = Stats[2] + AfterEgg
         if AfterEgg == 0 then
             rconsoleprint("@@LIGHT_GREEN@@")
-            rconsoleprint("[!] Collected ".. EggAmount .." egg(s) and gained a skin crate. \n")
+            rconsoleprint("[$] Collected ".. EggAmount .." egg(s) and gained a skin crate. \n")
             Stats[3] = Stats[3] + 1
         else
             rconsoleprint("@@LIGHT_GREEN@@")
-            rconsoleprint("[!] Collected ".. EggAmount .." egg(s) and gained ".. comma_value(AfterEgg) .."$. \n")
+            rconsoleprint("[$] Collected ".. EggAmount .." egg(s) and gained ".. comma_value(AfterEgg) .."$. \n")
         end
     else
         rconsoleprint("@@RED@@")
-        rconsoleprint("[!] 0 eggs found inside ".. game.JobId ..". \n")
+        rconsoleprint("[:(] 0 eggs found inside ".. game.JobId ..". \n")
     end
     return true
 end
