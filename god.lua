@@ -133,7 +133,7 @@ local function MainFarm()
             rconsoleprint("[!] Collected ".. EggAmount .." egg(s) and gained ".. comma_value(AfterEgg) .."$. \n")
         end
     else
-        rconsoleprint("@@RED@@")
+        rconsoleprint("@@DARK_RED@@")
         rconsoleprint("[!] 0 eggs found inside ".. game.JobId ..". \n")
     end
     return true
@@ -146,7 +146,7 @@ local function ServerHop()
     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, SelectedJobId)
     game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(Status)
         if Status == Enum.TeleportState.Failed then
-            rconsoleprint("@@RED@@")
+            rconsoleprint("@@DARK_RED@@")
             rconsoleprint("[#] Failed to join ".. SelectedJobId .." finding new server. \n")
             game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, RandomJobId())
         end
