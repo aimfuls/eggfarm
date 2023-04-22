@@ -125,12 +125,12 @@ local function MainFarm()
         local AfterEgg = tonumber(game:GetService("Players").LocalPlayer.DataFolder.Currency.Value) - BeforeEgg;
         Stats[2] = Stats[2] + AfterEgg
         if AfterEgg == 0 then
-            rconsoleprint("@@LIGHT_GREEN@@")
-            rconsoleprint("[$] Collected ".. EggAmount .." egg(s) and gained a skin crate. \n")
+            rconsoleprint("@@BLUE@@")
+            rconsoleprint("[-] Collected ".. EggAmount .." egg(s) and gained a skin crate. \n")
             Stats[3] = Stats[3] + 1
         else
-            rconsoleprint("@@LIGHT_GREEN@@")
-            rconsoleprint("[$] Collected ".. EggAmount .." egg(s) and gained ".. comma_value(AfterEgg) .."$. \n")
+            rconsoleprint("@@BLUE@@")
+            rconsoleprint("[-] Collected ".. EggAmount .." egg(s) and gained ".. comma_value(AfterEgg) .."$. \n")
         end
     else
         rconsoleprint("@@RED@@")
@@ -159,6 +159,6 @@ writefile("eggfarm-stats.json", game:GetService("HttpService"):JSONEncode(Stats)
 ServerHop()
 
 if FoundEggs then
-    rconsoleprint("@@BLUE@@")
-    rconsoleprint("[-] Current farming stats:\n     Eggs collected: ".. comma_value(Stats[1]) .."\n     Money gained: $".. comma_value(Stats[2]) .." \n     Crates opened: ".. comma_value(Stats[3]) .."\n     Servers hopped: ".. comma_value(Stats[5]) .."\n")
+    rconsoleprint("@@LIGHT_GREEN@@")
+    rconsoleprint("[$] Current farming stats:\n     Eggs collected: ".. comma_value(Stats[1]) .."\n     Money gained: $".. comma_value(Stats[2]) .." \n     Crates opened: ".. comma_value(Stats[3]) .."\n     Servers hopped: ".. comma_value(Stats[5]) .."\n")
 end
