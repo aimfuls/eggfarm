@@ -127,7 +127,7 @@ local function MainFarm()
         if AfterEgg == 0 then
             rconsoleprint("@@LIGHT_GREEN@@")
             rconsoleprint("[!] Collected ".. EggAmount .." egg(s) and gained a skin crate. \n")
-            Stats[3] = Stats[3] + 1 - 15000
+            Stats[3] = Stats[3] + 1 - 15200
         else
             rconsoleprint("@@LIGHT_GREEN@@")
             rconsoleprint("[!] Collected ".. EggAmount .." egg(s) and gained ".. comma_value(AfterEgg) .."$. \n")
