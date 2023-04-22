@@ -1,7 +1,3 @@
--- da hood egg farm
--- yes very shitty code, i dont rlly care its for a dead game cry abt it
-
--- console was requested
 rconsolename("GHAST OWNS YOU ; ghast#0001")
 rconsoleprint("@@CYAN@@")
 
@@ -137,7 +133,7 @@ local function MainFarm()
             rconsoleprint("[!] Collected ".. EggAmount .." egg(s) and gained ".. comma_value(AfterEgg) .."$. \n")
         end
     else
-        rconsoleprint("@@LIGHT_RED@@")
+        rconsoleprint("@@RED@@")
         rconsoleprint("[!] 0 eggs found inside ".. game.JobId ..". \n")
     end
     return true
@@ -145,12 +141,12 @@ end
 
 local function ServerHop()
     local SelectedJobId = RandomJobId();
-    rconsoleprint("@@LIGHT_CYAN@@")
+    rconsoleprint("@@LIGHT_PINK@@")
     rconsoleprint("[#] Server hopping to ".. SelectedJobId ..". \n")
     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, SelectedJobId)
     game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(Status)
         if Status == Enum.TeleportState.Failed then
-            rconsoleprint("@@LIGHT_RED@@")
+            rconsoleprint("@@RED@@")
             rconsoleprint("[#] Failed to join ".. SelectedJobId .." finding new server. \n")
             game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, RandomJobId())
         end
