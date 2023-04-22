@@ -2,7 +2,7 @@ rconsolename("GHAST OWNS YOU ; ghast#0001")
 rconsoleprint("@@CYAN@@")
 
 if not game:IsLoaded() then
-    rconsoleprint("Waiting for character to load \n")
+    rconsoleprint("[:] Waiting for character to load \n")
     game.Loaded:Wait()
 end
 
@@ -118,7 +118,7 @@ local function MainFarm()
         rconsoleprint("@@LIGHT_BLUE@@")
         rconsoleprint("[!] ".. (#FindEggs()) .." egg(s) found. \n")
         rconsoleprint("@@CYAN@@")
-        rconsoleprint("[Loading] \n")
+        rconsoleprint(" [] \n")
         repeat task.wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
         local BeforeEgg = tonumber(game:GetService("Players").LocalPlayer.DataFolder.Currency.Value);
         CollectEggs()
@@ -160,5 +160,5 @@ ServerHop()
 
 if FoundEggs then
     rconsoleprint("@@LIGHT_GREEN@@")
-    rconsoleprint("[$] Current farming stats:\n     Eggs collected: ".. comma_value(Stats[1]) .."\n     Money gained: $".. comma_value(Stats[2]) .." \n     Crates opened: ".. comma_value(Stats[3]) .."\n     Servers hopped: ".. comma_value(Stats[5]) .."\n")
+    rconsoleprint("[$] Stats:\n     Eggs: ".. comma_value(Stats[1]) .."\n     Money: $".. comma_value(Stats[2]) .." \n     Crates: ".. comma_value(Stats[3]) .."\n     Servers Hopped: ".. comma_value(Stats[5]) .."\n")
 end
