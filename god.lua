@@ -118,7 +118,7 @@ local function MainFarm()
         rconsoleprint("@@LIGHT_BLUE@@")
         rconsoleprint("[!] ".. (#FindEggs()) .." egg(s) found. \n")
         rconsoleprint("@@CYAN@@")
-        rconsoleprint(" [] \n")
+        rconsoleprint("[Loading] \n")
         repeat task.wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
         local BeforeEgg = tonumber(game:GetService("Players").LocalPlayer.DataFolder.Currency.Value);
         CollectEggs()
@@ -134,7 +134,7 @@ local function MainFarm()
         end
     else
         rconsoleprint("@@RED@@")
-        rconsoleprint("[:(] 0 eggs found inside ".. game.JobId ..". \n")
+        rconsoleprint("[:(] 0 eggs found". \n")
     end
     return true
 end
@@ -142,7 +142,7 @@ end
 local function ServerHop()
     local SelectedJobId = RandomJobId();
     rconsoleprint("@@RED@@")
-    rconsoleprint("[#] Server hopping to ".. SelectedJobId ..". \n")
+    rconsoleprint("Server hopping...". \n")
     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, SelectedJobId)
     game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(Status)
         if Status == Enum.TeleportState.Failed then
