@@ -1,5 +1,5 @@
-rconsolename("EGGFARM")
-rconsoleprint("@@MAGENTA@@")
+rconsolename("GHAST OWNS YOU ; ghast#0001")
+rconsoleprint("@@CYAN@@")
 
 if not game:IsLoaded() then
     rconsoleprint("[Waiting] \n")
@@ -21,7 +21,7 @@ local QueueOnTeleport = queue_on_teleport or syn.queue_on_teleport
 local FoundEggs = false;
 
 QueueOnTeleport([[
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/aimfuls/git/main/war.lua", true))();
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/aimfuls/eggfarm/main/god.lua", true))();
 ]])
 
 UserSettings().GameSettings.MasterVolume = 0
@@ -43,6 +43,14 @@ local function comma_value(amount) -- not mine, credits to: https://devforum.rob
         end
     end
     return formatted
+end
+
+local function ConvertToHMS(Seconds)
+    local Minutes = (Seconds - Seconds % 60) / 60
+    Seconds = Seconds - Minutes * 60
+    local Hours = (Minutes - Minutes % 60) / 60
+    Minutes = Minutes - Hours * 60
+    return string.format("%02i", Hours) .. ":" .. string.format("%02i", Minutes) .. ":" .. string.format("%02i", Seconds)
 end
 
 local function FindEggs()
@@ -126,7 +134,7 @@ local function MainFarm()
         end
     else
         rconsoleprint("@@RED@@")
-        rconsoleprint("[0 eggs found] ".." \n")
+        rconsoleprint(" [0 eggs found] ".." \n")
     end
     return true
 end
